@@ -5,10 +5,10 @@ def safe_print_list_integers(my_list=[], x=0):
     count = 0
 
     for i in range(x):
-        while x == int:
             try:
-                print("{:d}".format(i))
-            except: (TypeError, ValueError):
+                print("{:d}".format(my_list[i], end=''))
+                count += 1
+            except (TypeError, ValueError, IndexError):
                 break
     print("")
-    return counter
+    return count
