@@ -4,4 +4,4 @@
 
 class Square:
 
-    """ A square """
+    "" A square """
