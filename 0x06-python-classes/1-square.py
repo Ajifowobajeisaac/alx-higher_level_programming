@@ -2,6 +2,7 @@
 
 """Defines a square and it's attributes"""
 
+
 class Square:
     """A square and it's attributes"""
 
