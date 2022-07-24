@@ -32,7 +32,7 @@ class Square:
 
     def my_print(self):
         """Prints '#' based on the size"""
-        
+
         if self.__size < 1:
             print(" ")
         else:
