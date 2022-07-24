@@ -13,7 +13,7 @@ class Square:
 
     @property
     def size(self):
-        """str: The size of the current square"""
+        """int: The size of the current square"""
         return self.__size
 
     @size.setter
@@ -27,6 +27,16 @@ class Square:
         self.__size = value
 
     def area(self):
+        """int: The area of the square"""
         return self.__size * self.__size
 
-    def 
+    def my_print(self):
+        """Prints '#' based on the size"""
+        
+        if self.__size < 1:
+            print(" ")
+        else:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print("#", end="")
+                print("")
