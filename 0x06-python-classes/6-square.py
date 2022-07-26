@@ -39,4 +39,3 @@ class Sqaure:
 
         if not isinstance(value, tuple):
             raise TypeError("position must be tuple of 2 positive integers")
-        elif 
