@@ -8,12 +8,12 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initialises a new rectangle.
-        
+
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
         """
-        
+
         self.width = width
         self.height = height
 
@@ -28,7 +28,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
-        
+
         self.__width = value
 
     @property
@@ -44,7 +44,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
 
         self.__height = value
-    
+
     def area(self):
         """Returns the rectangle area."""
         return (self.__height * self.__width)
@@ -56,4 +56,3 @@ class Rectangle:
         else:
             tmp = (self.__height * 2) + (self.__width * 2)
             return tmp
-
