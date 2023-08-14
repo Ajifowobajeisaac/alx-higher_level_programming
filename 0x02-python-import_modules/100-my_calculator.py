@@ -17,6 +17,7 @@ if __name__ == "__main__":
     args = sys.argv
     if len(args) < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
     else:
         a = int(args[1])
         operator = args[2]
@@ -34,5 +35,6 @@ if __name__ == "__main__":
         operators = ['+', '-', '*', '/']
         if operator not in operators:
             print("Unknown operator. Available operators: +, -, * and /")
+            sys.exit(1)
         else:
             print(f"{a} {operator} {b} = {result}")
