@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 """
-    A basic calculator with 4 operations. 
+    A basic calculator with 4 operations.
 
     Usage: ./100-my_calculator.py <a> <operator> <b>
     Arguments:
         <a> int: Left hand integer.
-        <operator>: The mathematical operation.    
+        <operator>: The mathematical operation.
         <b> int: Right hand integer.
 """
 
