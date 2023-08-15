@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+"""Retrieves an element from a list at a specific index"""
+
+
 def element_at(my_list, idx):
     """Retrieves an element from a list at a specific index"""
     if idx < 0:
