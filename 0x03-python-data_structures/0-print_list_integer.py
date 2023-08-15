@@ -6,4 +6,4 @@
 def print_list_integer(my_list=[]):
     """Prints items of a list"""
     for item in my_list:
-        print("{d}".format(item))
+        print("{:d}".format(item))
