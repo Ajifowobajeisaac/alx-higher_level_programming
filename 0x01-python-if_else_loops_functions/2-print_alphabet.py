@@ -1,7 +1,5 @@
 #!/usr/bin/python3
+"""Print the alphabet in lowercase, not followed by a new line."""
 
-i = 97
-while i < 123:
-    print('{}'.format(chr(i)), end='')
-    i = i + 1
-
+for letter in range(97, 123):
+    print("{}".format(chr(letter)), end="")
