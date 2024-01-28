@@ -15,7 +15,7 @@ def filter_states(username, password, db_name):
         passwd=password, db=db_name)
     cur = db.cursor()
 
-    cur.execute('SELECT * FROM states WHERE name LIKE \'N%\'')
+    cur.execute('SELECT * FROM states WHERE LOWER(name) LIKE \'n%\'')
 
     states = cur.fetchall()
 
