@@ -15,7 +15,8 @@ def search_filter(username, password, db_name, search):
         passwd=password, db=db_name)
     cur = db.cursor()
 
-    cur.execute('SELECT * FROM states WHERE name = %s', (search, ))
+    cur.execute(
+        'SELECT * FROM states WHERE name = "{}";'.format(search))
 
     state = cur.fetchone()
     print(state)
