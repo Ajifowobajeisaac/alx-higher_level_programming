@@ -19,8 +19,9 @@ def search_filter(username, password, db_name, search):
         "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;"
         .format(search))
 
-    state = cur.fetchall()
-    print(state)
+    states = cur.fetchall()
+    for state in states:
+        print(state)
 
     cur.close()
     db.close()
