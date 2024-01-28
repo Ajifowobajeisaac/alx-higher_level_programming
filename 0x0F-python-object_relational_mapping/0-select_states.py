@@ -21,6 +21,8 @@ def db_mysql_states(username, password, database_name):
     for state in states:
         print(state)
 
+    cur.close()
+    db.close()
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:

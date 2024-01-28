@@ -21,6 +21,9 @@ def filter_states(username, password, db_name):
 
     for state in states:
         print(state)
+    
+    cur.close()
+    db.close()
 
 
 if __name__ == "__main__":
