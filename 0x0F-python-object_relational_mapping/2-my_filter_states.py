@@ -16,7 +16,8 @@ def search_filter(username, password, db_name, search):
     cur = db.cursor()
 
     cur.execute(
-        'SELECT * FROM states WHERE name = "{}";'.format(search))
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;"
+        .format(search))
 
     state = cur.fetchone()
     print(state)
