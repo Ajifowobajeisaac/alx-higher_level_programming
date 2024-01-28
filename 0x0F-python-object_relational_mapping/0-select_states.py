@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+
+"""A script that lists all states from the database hbtn_0e_0_usa"""
+
+
 import MySQLdb
 import sys
 
-# print("success")
 
-def db_mysql(username, password, database_name):
+def db_mysql_states(username, password, database_name):
+    """Takes a user credentials and queries database for states"""
     db = MySQLdb.connect(host='localhost', port=3306, user=username,
                     passwd=password, db=database_name)
     
@@ -22,4 +26,4 @@ if __name__ == "__main__":
         password = sys.argv[2]
         database_name = sys.argv[3]
     
-    db_mysql(username, password, database_name)
+    db_mysql_states(username, password, database_name)
