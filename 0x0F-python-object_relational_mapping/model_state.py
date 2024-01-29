@@ -4,20 +4,19 @@
 Base = declarative_base()"""
 
 import sqlalchemy
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
-
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format("root", "root", "my_db"), pool_pre_ping=True)
-Base.metadata.create_all(engine)
 
 
 class State(Base):
     """Defines a state object"""
 
-    __tablename__ = 'state'
+    __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
+
+    def __repr__(self):
+        return f"{self.id}, {self.name}"
