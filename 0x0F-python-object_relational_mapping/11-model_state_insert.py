@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import NoResultFound
 
 if __name__ == "__main__":
     if len(argv) == 4:
@@ -22,5 +23,8 @@ if __name__ == "__main__":
     louisiana = State(name='Louisiana')
     session.add(louisiana)
     session.commit()
-    state_id = session.query(louisiana.id)
-    print(state_id)
+    try:
+        state_id = session.query(louisiana.id).one()
+        print(state_id[0])
+    except NoResultFound:
+        print("Not found")
