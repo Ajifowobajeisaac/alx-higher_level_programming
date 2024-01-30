@@ -2,7 +2,7 @@
 
 """A script that lists all State objects from the database hbtn_0e_6_usa"""
 
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker
@@ -22,4 +22,8 @@ if __name__ == "__main__":
 
     state = State()
     first_state = session.query(State).first()
-    print(f"{first_state.id}: {first_state.name}")
+    
+    if state != None:
+        print(f"{first_state.id}: {first_state.name}")
+    else:
+        print("Nothing")
