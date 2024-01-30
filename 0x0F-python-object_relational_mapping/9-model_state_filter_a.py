@@ -21,14 +21,12 @@ if __name__ == "__main__":
     session = Session()
 
     state = State()
-    
+
     states = session.query(State).filter(
-        State.name.ilike('%d')).order_by(State.id)
-    
+        State.name.ilike('%a')).order_by(State.id)
 
     if states is None:
         print("Nothing")
-
     else:
         for state in states:
             print(f"{state.id}: {state.name}")
