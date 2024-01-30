@@ -22,7 +22,7 @@ if __name__ == "__main__":
     state = State()
 
     states = session.query(State).filter(
-        State.name.ilike('%a')).order_by(State.id)
+        State.name.like('%a')).order_by(State.id)
 
     if states is None:
         print("Nothing")
