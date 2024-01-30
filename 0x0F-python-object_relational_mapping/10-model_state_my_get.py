@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import NoResultFound
 
 if __name__ == "__main__":
     if len(argv) == 5:
@@ -22,9 +23,8 @@ if __name__ == "__main__":
 
     state = State()
 
-    state_unique = session.query(State).filter(State.name == search).one()
-
-    if not state_unique:
-        print("Not found")
-    else:
+    try:
+        state_unique = session.query(State).filter(State.name == search).one()
         print(state_unique.id)
+    except NoResultFound:
+        print("Not found")
