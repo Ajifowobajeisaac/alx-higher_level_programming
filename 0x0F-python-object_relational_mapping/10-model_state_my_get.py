@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     state_unique = session.query(State).filter(State.name == search).one()
 
-    if state_unique is None:
+    if not state_unique:
         print("Not found")
     else:
         print(state_unique.id)
