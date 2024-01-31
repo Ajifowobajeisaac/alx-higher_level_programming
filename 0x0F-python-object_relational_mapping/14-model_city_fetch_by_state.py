@@ -35,7 +35,7 @@ if __name__ == "__main__":
         for cities, states in session.query(City, State)\
                 .filter(City.state_id == State.id)\
                 .order_by(City.id):
-            print(f"{states.name}: {cities.id} {cities.name}")
+            print(f"{states.name}: ({cities.id}) {cities.name}")
         session.commit()
     except Exception as e:
         print(f"An error occureded {e}")
