@@ -32,12 +32,13 @@ if __name__ == "__main__":
     session = Session()
 
     # my_session work
+
+    Base.metadata.create_all(engine)
     try:
         cali_ = State(name='California')
-        print(cali_.name)
-        print(cali_.cities)
-        cali_.cities = [City(name='San Francisco')]
-        print(cali_.cities)
+        san = City(name='San Francisco')
+        cali_.cities = [san]
+        session.add(cali_)
         session.commit()
     except Exception as e:
         print(f"An error occureded {e}")
