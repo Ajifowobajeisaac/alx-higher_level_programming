@@ -3,7 +3,8 @@
 """A script that lists all State objects from the database hbtn_0e_6_usa"""
 
 from sqlalchemy import create_engine
-from model_state import Base, State
+from relationship_state import Base, State
+from relationship_city import City
 from sys import argv
 from sqlalchemy.orm import sessionmaker
 
