@@ -34,11 +34,11 @@ if __name__ == "__main__":
     # my_session work
 
     try:
-        states = session.query(State).all()
+        states = session.query(State).
         for state in states:
-            print(f"State name:{state.name}")
+            print(f"{state.id}: {state.name}")
             for city in state.cities:
-                print(f"Cities: {city}")
+                print(f"{city.id}: {city}")
 
     except Exception as e:
         print(f"An error occureded {e}")
