@@ -39,8 +39,6 @@ if __name__ == "__main__":
             print(f"{state.id}: {state.name}")
             for city in state.cities:
                 print(f"    {city.id}: {city.name}")
-
-
     except Exception as e:
         print(f"An error occureded {e}")
     finally:
