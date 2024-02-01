@@ -36,7 +36,7 @@ if __name__ == "__main__":
     try:
         cities = session.query(City)
         for city in cities:
-            print(f"{city.id}: {city.name} -> {city.state}")
+            print(f"{city.id}: {city.name} -> {city.state.name}")
     except Exception as e:
         print(f"An error occureded {e}")
     finally:
