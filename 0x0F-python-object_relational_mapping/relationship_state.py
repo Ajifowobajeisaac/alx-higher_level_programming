@@ -19,6 +19,6 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
     cities = relationship('City', backref='state', cascade='all, delete')
-   
+
     def __repr__(self):
         return f"{self.id}, {self.name}"
