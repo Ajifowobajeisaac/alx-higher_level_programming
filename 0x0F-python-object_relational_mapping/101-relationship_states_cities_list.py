@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 """
- creates the State “California” with the City “San Francisco”
- from the database hbtn_0e_100_usa
+ A that lists all State objects, and corresponding City objects,
+ contained in the database hbtn_0e_101_usa
 """
 if __name__ == "__main__":
     # Import necessary modules.
@@ -32,14 +32,14 @@ if __name__ == "__main__":
     session = Session()
 
     # my_session work
-    Base.metadata.create_all(engine)
-    
+
     try:
-        cali_ = State(name='California')
-        san = City(name='San Francisco')
-        cali_.cities = [san]
-        session.add(cali_)
-        session.commit()
+        states = session.query(State).all()
+        for state in states:
+            print(f"State name:{state.name}")
+            for city in state.cities:
+                print(f"Cities: {city}")
+
     except Exception as e:
         print(f"An error occureded {e}")
     finally:
