@@ -5,15 +5,16 @@
 """
 
 if __name__ == "__main__":
-	import urllib
-	from sys import argv
+	import urllib.parse
+	import urllib.request
+	from sys
 
-	url = argv[1]
-	emails = {'email' : argv[2]}
+	url = sys.argv[1]
+	email = sys.argv[2]}
 
-	email = urllib.parse.urlencode(emails)
-	email = email.encode('utf-8')
-	req = urllib.request.Request(url, email)
-	with urllib.request.openurl(req) as response:
-		page = response.read()
+	try:
+		data = urllib.parse.urlencode('email': email})
+		data = email.encode('ascii')
+	with urllib.request.openurl(url, data) as response:
+		page = response.read().decode('utf-8')
 		print(page)
