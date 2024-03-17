@@ -1,62 +1,113 @@
-In this first debugging project, you will need to get Apache to run on the container and to return a page containing Hello Holberton when querying the root of it.
-Example:
-vagrant@vagrant:~$ docker run -p 8080:80 -d -it holbertonschool/265-0
-47ca3994a4910bbc29d1d8925b1c70e1bdd799f5442040365a7cb9a0db218021
-vagrant@vagrant:~$ docker ps
-CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS                  NAMES
-47ca3994a491        holbertonschool/265-0   "/bin/bash"         3 seconds ago       Up 2 seconds        0.0.0.0:8080->80/tcp   vigilant_tesla
-vagrant@vagrant:~$ curl 0:8080
-curl: (52) Empty reply from server
-vagrant@vagrant:~$
-Here we can see that after starting my Docker container, I curl the port 8080mapped to the Docker container port 80, it does not return a page but an error message. Note that you might also get the error message curl: (52) Empty reply from server.
-vagrant@vagrant:~$ curl 0:8080
-Hello Holberton
-vagrant@vagrant:~$
-After connecting to the container and fixing whatever needed to be fixed (here is your mission), you can see that curling port 80 return a page that contains Hello Holberton. Paste the command(s) you used to fix the issue in your answer file.
-
-
-
-how do I get the container they want me to use?
-
-Show drafts
-
-Here's a breakdown of how to get the container, understand the task, and potential troubleshooting areas:
-
-Getting the Container
-
-The instructions mention a container called "holbertonschool/265-0". Here's how to obtain it:
-
-Docker Hub:
-
-Search for "holbertonschool/265-0" on the Docker Hub repository: https://hub.docker.com/.
-If it's a public image, you'll find the command to pull it directly.
-Holberton School Resources:
-
-If this exercise is part of the Holberton School curriculum, they likely provide the container in a couple of ways:
-Private Repository: You might have access to a private repository where the image is stored. Check your course materials for repository address and login credentials.
-Build Instructions: They may provide a Dockerfile that outlines how to build the container image yourself.
-Understanding the Task
-
-The main goal of the exercise is to:
-
-Run the holbertonschool/265-0 container.
-Investigate why the Apache web server inside the container isn't correctly serving the "Hello Holberton" page.
-Fix the configuration within the container to make Apache work as expected.
-Troubleshooting Areas
-
-Once you have the container running, consider these common areas where things might go wrong:
-
-Apache not installed: The container might not have Apache pre-installed.
-Apache not running: Apache might be installed but not started.
-Apache misconfiguration: The Apache configuration file might have errors preventing it from serving the page.
-Firewall: The container's internal firewall might be blocking access to port 80.
-How to Proceed
-
-Pull the container: Use the docker pull holbertonschool/265-0 command (assuming it's on Docker Hub).
-Run the container: Use the provided command docker run -p 8080:80 -d -it holbertonschool/265-0
-Connect to the container: Use docker exec -it <container_id> bash to get a shell inside the running container.
-Start troubleshooting:
-Use ps aux or similar commands to check if Apache is running.
-Use systemctl start apache2 (or the appropriate command for your Linux distribution) if it's not running.
-Examine the Apache configuration file (usually located at /etc/apache2/apache2.conf or a similar path).
-Check firewall rules using iptables -L
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Zeek's Software Portfolio</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Merriweather', serif; /* Elegant heading font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #0A0F0D, #202C59); /* Sophisticated background */
+            color: #FFFFFF;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #DAA520; /* Gold accent for elegance */
+        }
+        p {
+            font-family: 'Helvetica Neue', sans-serif; /* Modern body font */
+            font-size: 1.2em;
+            color: #BBBBBB; /* Soft gray for secondary text */
+        }
+        .notice {
+            font-size: 1.1em;
+            color: #C0C0C0; /* Silver accent */
+            margin-top: 20px;
+        }
+        .footer {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #BBBBBB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chef Zeek's Digital Kitchen</h1>
+        <p>Cooking and serving innovation</p>
+        <p class="notice">Site is marinating.</p>
+    </div>
+    <div class="footer">
+        <p>© Chef Zeek's Software Portfolio 2024. All rights reserved.</p>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Zeek's Software Portfolio</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Merriweather', serif; /* Elegant heading font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #0A0F0D, #202C59); /* Sophisticated background */
+            color: #FFFFFF;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #DAA520; /* Gold accent for elegance */
+        }
+        p {
+            font-family: 'Helvetica Neue', sans-serif; /* Modern body font */
+            font-size: 1.2em;
+            color: #BBBBBB; /* Soft gray for secondary text */
+        }
+        .notice {
+            font-size: 1.1em;
+            color: #C0C0C0; /* Silver accent */
+            margin-top: 20px;
+        }
+        .footer {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #BBBBBB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chef Zeek's Digital Kitchen</h1>
+        <p>Cooking and serving innovation</p>
+        <p class="notice">Site is marinating.</p>
+    </div>
+    <div class="footer">
+        <p>© Chef Zeek's Software Portfolio 2024. All rights reserved.</p>
+    </div>
+</body>
+</html>
