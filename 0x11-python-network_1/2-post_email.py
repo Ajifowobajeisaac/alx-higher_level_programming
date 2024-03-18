@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-- sript takes a url and an email and sends a post request to the url
+- sript takes an url and an email
+- sends a post request to the url
 - with the email as the passed parameter.
 - email must be sent in an email variable
 """
-
 
 if __name__ == "__main__":
 	import urllib.parse
