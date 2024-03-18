@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-- Takes a url and an email
-- Sends a POST request to the url with the email as parameter
+- Takes a url and an email.
+- Sends a POST request to the url with the email as parameter.
 """
 
 if __name__ == "__main__":
