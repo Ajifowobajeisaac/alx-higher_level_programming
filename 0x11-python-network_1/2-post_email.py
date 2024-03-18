@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" A module that:
-- takes an url and an email
-- sends a post request to the url
+"""
+- takes an url and an email.
+- sends a post request to the url.
 - with the email as the passed parameter.
-- email must be sent in an email variable
+- displays the body of the respones.
 """
 
 if __name__ == "__main__":
