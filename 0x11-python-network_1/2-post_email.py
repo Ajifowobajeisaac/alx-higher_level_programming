@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+"""A script that:
+- takes in a URL
+- sends a POST request to the passed URL
+- takes email as a parameter
+- displays the body of the response
 """
-- takes an url and an email.
-- sends a post request to the url.
-- with the email as the passed parameter.
-- displays the body of the respones.
-"""
-
 if __name__ == "__main__":
 	import urllib.parse
 	import urllib.request
